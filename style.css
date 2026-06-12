@@ -1,1 +1,480 @@
+/* ===== ESTILOS GERAIS ===== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
 
+body {
+    font-family: 'Comic Neue', 'Segoe UI', 'Comic Neue', 'Comic Sans MS', cursive, sans-serif;
+    font-size: 16px;
+    line-height: 1.6;
+    color: #333;
+    background-color: #FFF8E7;
+    transition: all 0.3s ease;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* ===== CABEÇALHO ===== */
+header {
+    background: linear-gradient(135deg, #2E7D32 0%, #4CAF50 100%);
+    color: white;
+    padding: 20px 0;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+}
+
+header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.logo h1 {
+    font-size: 1.8rem;
+    margin-bottom: 5px;
+}
+
+.logo p {
+    font-size: 0.9rem;
+    opacity: 0.9;
+}
+
+.menu {
+    display: flex;
+    list-style: none;
+    gap: 25px;
+    flex-wrap: wrap;
+}
+
+.menu a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    padding: 8px 15px;
+    border-radius: 25px;
+    transition: all 0.3s;
+}
+
+.menu a:hover, .menu a.ativo {
+    background-color: #FFC107;
+    color: #333;
+}
+
+/* ===== SEÇÕES ===== */
+.secao {
+    padding: 60px 0;
+}
+
+.secao h2 {
+    font-size: 2rem;
+    margin-bottom: 15px;
+    text-align: center;
+    color: #2E7D32;
+}
+
+.subtitulo {
+    text-align: center;
+    color: #666;
+    margin-bottom: 40px;
+    font-size: 1.1rem;
+}
+
+.fundo-claro {
+    background-color: #F5F5F5;
+}
+
+.fundo-jogo {
+    background: linear-gradient(135deg, #FFF3E0, #FFE0B2);
+}
+
+/* ===== HERO ===== */
+.hero {
+    text-align: center;
+    padding: 50px 20px;
+    background: linear-gradient(135deg, #4CAF50, #2E7D32);
+    border-radius: 30px;
+    color: white;
+}
+
+.hero h2 {
+    font-size: 2.2rem;
+    margin-bottom: 15px;
+    color: white;
+}
+
+.hero p {
+    font-size: 1.2rem;
+    margin-bottom: 25px;
+}
+
+.btn-principal {
+    display: inline-block;
+    background-color: #FFC107;
+    color: #333;
+    padding: 12px 35px;
+    border-radius: 50px;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 1.1rem;
+    transition: transform 0.3s, background-color 0.3s;
+}
+
+.btn-principal:hover {
+    background-color: #FFB300;
+    transform: scale(1.05);
+}
+
+/* ===== ALFABETO ===== */
+.alfabeto-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(70px, 1fr));
+    gap: 15px;
+    text-align: center;
+}
+
+.letra-card {
+    background: white;
+    border: 3px solid #4CAF50;
+    border-radius: 15px;
+    padding: 15px;
+    font-size: 2rem;
+    font-weight: bold;
+    color: #2E7D32;
+    cursor: pointer;
+    transition: all 0.3s;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+.letra-card:hover {
+    transform: translateY(-5px);
+    background-color: #4CAF50;
+    color: white;
+    border-color: #FFC107;
+}
+
+/* ===== SÍLABAS ===== */
+.botoes-silabas {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin-bottom: 30px;
+}
+
+.btn-silaba {
+    background: linear-gradient(135deg, #2196F3, #1976D2);
+    color: white;
+    border: none;
+    padding: 12px 20px;
+    border-radius: 30px;
+    font-size: 1rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: transform 0.2s;
+}
+
+.btn-silaba:hover {
+    transform: scale(1.05);
+    background: linear-gradient(135deg, #1976D2, #0D47A1);
+}
+
+.exibicao-silabas {
+    background: white;
+    border-radius: 20px;
+    padding: 30px;
+    text-align: center;
+    font-size: 2rem;
+    letter-spacing: 15px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    min-height: 120px;
+}
+
+/* ===== JOGO DA LEITURA ===== */
+.jogo-container {
+    background: white;
+    border-radius: 30px;
+    padding: 40px;
+    text-align: center;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+}
+
+.jogo-imagem {
+    margin-bottom: 30px;
+}
+
+.imagem-placeholder {
+    font-size: 120px;
+    background: #FFF8E7;
+    border-radius: 50%;
+    width: 200px;
+    height: 200px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+}
+
+.dica {
+    margin-top: 15px;
+    color: #666;
+    font-size: 1rem;
+}
+
+.botoes-opcoes {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+    margin: 20px 0;
+}
+
+.btn-opcao {
+    background: #4CAF50;
+    color: white;
+    border: none;
+    padding: 15px 25px;
+    border-radius: 15px;
+    font-size: 1.3rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.btn-opcao:hover {
+    transform: scale(1.05);
+    background: #2E7D32;
+}
+
+.btn-opcao.correto {
+    background: #4CAF50;
+    animation: piscar 0.5s ease 3;
+}
+
+.btn-opcao.errado {
+    background: #f44336;
+    animation: tremer 0.3s ease;
+}
+
+@keyframes piscar {
+    0%, 100% { background: #4CAF50; }
+    50% { background: #81C784; }
+}
+
+@keyframes tremer {
+    0%, 100% { transform: translateX(0); }
+    25% { transform: translateX(-5px); }
+    75% { transform: translateX(5px); }
+}
+
+.btn-jogo {
+    background: #FF9800;
+    color: white;
+    border: none;
+    padding: 12px 30px;
+    border-radius: 30px;
+    font-size: 1rem;
+    font-weight: bold;
+    cursor: pointer;
+    margin-top: 15px;
+}
+
+.resultado {
+    margin-top: 20px;
+    font-size: 1.2rem;
+    font-weight: bold;
+}
+
+.resultado.acerto {
+    color: #4CAF50;
+}
+
+.resultado.erro {
+    color: #f44336;
+}
+
+/* ===== ATIVIDADES ===== */
+.grid-atividades {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 25px;
+    margin-bottom: 30px;
+}
+
+.card-atividade {
+    background: white;
+    border-radius: 20px;
+    padding: 25px;
+    text-align: center;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    transition: transform 0.3s;
+}
+
+.card-atividade:hover {
+    transform: translateY(-5px);
+}
+
+.card-atividade h3 {
+    color: #2E7D32;
+    margin-bottom: 15px;
+}
+
+.btn-atividade {
+    background: #4CAF50;
+    color: white;
+    border: none;
+    padding: 10px 25px;
+    border-radius: 25px;
+    cursor: pointer;
+    margin-top: 15px;
+    font-size: 0.9rem;
+}
+
+.area-atividade {
+    background: white;
+    border-radius: 20px;
+    padding: 25px;
+    margin-top: 20px;
+    position: relative;
+}
+
+.btn-fechar {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    background: #f44336;
+    color: white;
+    border: none;
+    padding: 5px 12px;
+    border-radius: 20px;
+    cursor: pointer;
+}
+
+/* ===== RODAPÉ ===== */
+footer {
+    background: linear-gradient(135deg, #2E7D32, #1B5E20);
+    color: white;
+    text-align: center;
+    padding: 30px 0;
+}
+
+/* ===== BOTÃO DE ACESSIBILIDADE ===== */
+.botao-acessibilidade {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    z-index: 1000;
+}
+
+.acessibilidade-btn {
+    background-color: #2E7D32;
+    color: white;
+    border: none;
+    padding: 12px 18px;
+    border-radius: 50px;
+    cursor: pointer;
+    font-size: 1rem;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+}
+
+.menu-acessibilidade {
+    position: absolute;
+    bottom: 60px;
+    right: 0;
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+    overflow: hidden;
+    min-width: 180px;
+}
+
+.menu-acessibilidade button {
+    display: block;
+    width: 100%;
+    padding: 12px;
+    border: none;
+    background: white;
+    cursor: pointer;
+    text-align: left;
+    font-size: 0.9rem;
+    transition: background 0.2s;
+}
+
+.menu-acessibilidade button:hover {
+    background-color: #f0f0f0;
+}
+
+/* ===== ALTO CONTRASTE ===== */
+.alto-contraste {
+    background-color: black !important;
+    color: yellow !important;
+}
+
+.alto-contraste header,
+.alto-contraste footer,
+.alto-contraste .card-atividade,
+.alto-contraste .jogo-container,
+.alto-contraste .exibicao-silabas {
+    background-color: black !important;
+    color: yellow !important;
+    border: 2px solid yellow !important;
+}
+
+.alto-contraste button,
+.alto-contraste .btn-principal {
+    background-color: #333 !important;
+    color: yellow !important;
+    border: 1px solid yellow !important;
+}
+
+/* ===== RESPONSIVIDADE ===== */
+@media (max-width: 768px) {
+    header .container {
+        flex-direction: column;
+        text-align: center;
+    }
+    
+    .menu {
+        margin-top: 15px;
+        justify-content: center;
+    }
+    
+    .hero h2 {
+        font-size: 1.6rem;
+    }
+    
+    .alfabeto-grid {
+        grid-template-columns: repeat(auto-fill, minmax(55px, 1fr));
+        gap: 10px;
+    }
+    
+    .letra-card {
+        font-size: 1.5rem;
+        padding: 10px;
+    }
+    
+    .exibicao-silabas {
+        font-size: 1.2rem;
+        letter-spacing: 8px;
+    }
+    
+    .btn-opcao {
+        padding: 10px 18px;
+        font-size: 1rem;
+    }
+}
+
+/* Controle de fonte */
+.fonte-pequena { font-size: 14px; }
+.fonte-normal { font-size: 16px; }
+.fonte-grande { font-size: 18px; }
+.fonte-muito-grande { font-size: 20px; }
