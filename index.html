@@ -1,1 +1,158 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Aprenda a ler de forma divertida! Site educativo com jogos e atividades de leitura para crianças.">
+    <title>Ler é Divertido - Aprenda a Ler</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
 
+    <!-- Botão de Acessibilidade Fixo -->
+    <div class="botao-acessibilidade" id="botaoAcessibilidade">
+        <button class="acessibilidade-btn" id="btnAcessibilidade" aria-label="Menu de acessibilidade">♿ Acessibilidade</button>
+        <div class="menu-acessibilidade" id="menuAcessibilidade" style="display: none;">
+            <button id="aumentarFonte" aria-label="Aumentar fonte">🔍 A+ Aumentar fonte</button>
+            <button id="diminuirFonte" aria-label="Diminuir fonte">🔍 A- Diminuir fonte</button>
+            <button id="altoContraste" aria-label="Ativar alto contraste">🌓 Alto contraste</button>
+        </div>
+    </div>
+
+    <!-- Cabeçalho -->
+    <header>
+        <div class="container">
+            <div class="logo">
+                <h1>📖 Ler é Divertido!</h1>
+                <p>Aprenda a ler brincando</p>
+            </div>
+            <nav>
+                <ul class="menu">
+                    <li><a href="#inicio" class="ativo">Início</a></li>
+                    <li><a href="#alfabeto">Alfabeto</a></li>
+                    <li><a href="#silabas">Sílabas</a></li>
+                    <li><a href="#jogo">Jogo da Leitura</a></li>
+                    <li><a href="#atividades">Atividades</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Conteúdo Principal -->
+    <main>
+        <!-- Seção Início -->
+        <section id="inicio" class="secao">
+            <div class="container">
+                <div class="hero">
+                    <h2>🌟 Vamos aprender a ler? 🌟</h2>
+                    <p>Com jogos divertidos e atividades interativas, você vai aprender o alfabeto, formar sílabas e ler suas primeiras palavras!</p>
+                    <a href="#jogo" class="btn-principal">🎮 Começar a brincar!</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Seção Alfabeto -->
+        <section id="alfabeto" class="secao fundo-claro">
+            <div class="container">
+                <h2>🔤 Conheça o Alfabeto</h2>
+                <p class="subtitulo">Clique em cada letra para ouvir o som!</p>
+                <div class="alfabeto-grid" id="alfabetoGrid">
+                    <!-- As letras serão inseridas via JavaScript -->
+                </div>
+            </div>
+        </section>
+
+        <!-- Seção Sílabas -->
+        <section id="silabas" class="secao">
+            <div class="container">
+                <h2>📚 Formando Sílabas</h2>
+                <p class="subtitulo">Aprenda as famílias silábicas</p>
+                
+                <div class="botoes-silabas">
+                    <button class="btn-silaba" data-silaba="ba">BA - BE - BI - BO - BU</button>
+                    <button class="btn-silaba" data-silaba="ca">CA - CE - CI - CO - CU</button>
+                    <button class="btn-silaba" data-silaba="da">DA - DE - DI - DO - DU</button>
+                    <button class="btn-silaba" data-silaba="fa">FA - FE - FI - FO - FU</button>
+                    <button class="btn-silaba" data-silaba="ga">GA - GE - GI - GO - GU</button>
+                    <button class="btn-silaba" data-silaba="ja">JA - JE - JI - JO - JU</button>
+                    <button class="btn-silaba" data-silaba="la">LA - LE - LI - LO - LU</button>
+                    <button class="btn-silaba" data-silaba="ma">MA - ME - MI - MO - MU</button>
+                    <button class="btn-silaba" data-silaba="na">NA - NE - NI - NO - NU</button>
+                    <button class="btn-silaba" data-silaba="pa">PA - PE - PI - PO - PU</button>
+                    <button class="btn-silaba" data-silaba="ra">RA - RE - RI - RO - RU</button>
+                    <button class="btn-silaba" data-silaba="sa">SA - SE - SI - SO - SU</button>
+                    <button class="btn-silaba" data-silaba="ta">TA - TE - TI - TO - TU</button>
+                    <button class="btn-silaba" data-silaba="va">VA - VE - VI - VO - VU</button>
+                </div>
+                
+                <div id="exibicaoSilabas" class="exibicao-silabas">
+                    <p>👆 Clique em uma família silábica para ver as sílabas!</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Seção Jogo da Leitura (Funcionalidade Principal) -->
+        <section id="jogo" class="secao fundo-jogo">
+            <div class="container">
+                <h2>🎮 Jogo da Leitura</h2>
+                <p class="subtitulo">Qual é a palavra da figura?</p>
+                
+                <div class="jogo-container">
+                    <div class="jogo-imagem">
+                        <div id="imagemJogo" class="imagem-placeholder">🐱</div>
+                        <p id="dicaJogo" class="dica">Clique em "Nova Palavra" para começar!</p>
+                    </div>
+                    
+                    <div class="jogo-opcoes">
+                        <div id="opcoesJogo" class="botoes-opcoes">
+                            <!-- Opções serão geradas pelo JavaScript -->
+                        </div>
+                        <button id="novaPalavraBtn" class="btn-jogo">🔄 Nova Palavra</button>
+                    </div>
+                    
+                    <div id="resultadoJogo" class="resultado"></div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Seção Atividades -->
+        <section id="atividades" class="secao fundo-claro">
+            <div class="container">
+                <h2>✏️ Atividades para Praticar</h2>
+                <div class="grid-atividades">
+                    <div class="card-atividade">
+                        <h3>📝 Complete a palavra</h3>
+                        <p>Escolha a letra que falta para formar a palavra.</p>
+                        <button class="btn-atividade" onclick="mostrarAtividade('completar')">Praticar</button>
+                    </div>
+                    <div class="card-atividade">
+                        <h3>🔗 Junte as sílabas</h3>
+                        <p>Organize as sílabas para formar a palavra correta.</p>
+                        <button class="btn-atividade" onclick="mostrarAtividade('silabas')">Praticar</button>
+                    </div>
+                    <div class="card-atividade">
+                        <h3>🎯 Encontre a palavra</h3>
+                        <p>Encontre a palavra escondida no caça-palavras.</p>
+                        <button class="btn-atividade" onclick="mostrarAtividade('palavras')">Praticar</button>
+                    </div>
+                </div>
+                
+                <div id="areaAtividade" class="area-atividade" style="display: none;">
+                    <button class="btn-fechar" onclick="fecharAtividade()">✖ Fechar</button>
+                    <div id="conteudoAtividade"></div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Rodapé -->
+    <footer>
+        <div class="container">
+            <p>📖 Ler é Divertido - Aprender a ler é uma aventura!</p>
+            <p>© 2026 - Site educativo para alfabetização</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
